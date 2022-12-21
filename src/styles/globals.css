@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+/* Theme 1 */
+/* Backgrounds */
+.theme-1 {
+	--c-main-bg: hsl(222, 26%, 31%);
+	--c-toggle-bg: hsl(223, 31%, 20%);
+	--c-screen-bg: hsl(224, 36%, 15%);
+
+	/* Keys*/
+	--c-key-1-bg: hsl(225, 21%, 49%);
+	--c-key-1-shdw: hsl(224, 28%, 35%);
+
+	--c-key-2-bg: hsl(6, 63%, 50%);
+	--c-key-2-shdw: hsl(6, 70%, 34%);
+
+	--c-key-3-bg: hsl(30, 25%, 89%);
+	--c-key-3-shdw: hsl(28, 16%, 65%);
+
+	/* Text */
+	--c-text-prm: hsl(221, 14%, 31%);
+	--c-text-sec: hsl(0, 0%, 100%);
+}
+
+/* Theme 2 */
+/* Backgrounds */
+.theme-2 {
+	--c-main-bg: hsl(0, 0%, 90%);
+	--c-toggle-bg: hsl(0, 5%, 81%);
+	--c-screen-bg: hsl(0, 0%, 93%);
+
+	/* Keys*/
+	--c-key-1-bg: hsl(185, 42%, 37%);
+	--c-key-1-shdw: hsl(185, 58%, 25%);
+
+	--c-key-2-bg: hsl(25, 98%, 40%);
+	--c-key-2-shdw: hsl(25, 99%, 27%);
+
+	--c-key-3-bg: hsl(45, 7%, 89%);
+	--c-key-3-shdw: hsl(35, 11%, 61%);
+
+	/* Text */
+	--c-text-prm: hsl(60, 10%, 19%);
+	--c-text-sec: hsl(0, 0%, 100%);
+}
+
+/* Theme 3 */
+/* Backgrounds */
+.theme-3 {
+	--c-main-bg: hsl(268, 75%, 9%);
+	--c-screen-bg: hsl(268, 71%, 12%);
+
+	/* Keys*/
+	--c-key-1-bg: hsl(281, 89%, 26%);
+	--c-key-1-shdw: hsl(285, 91%, 52%);
+
+	--c-key-2-bg: hsl(176, 100%, 44%);
+	--c-key-2-shdw: hsl(177, 92%, 70%);
+
+	--c-key-3-bg: hsl(268, 47%, 21%);
+	--c-key-3-shdw: hsl(290, 70%, 36%);
+
+	/* Text */
+	--c-text-prm: hsl(52, 100%, 62%);
+	--c-text-sec: hsl(0, 0%, 100%);
+	--c-text-tri: hsl(198, 20%, 13%);
+}

@@ -1,7 +1,7 @@
 import "./styles/globals.css";
 import "./styles/reset.css";
+import "./styles/themes.css";
 import { useState } from "react";
-import { ThemeProvider } from "styled-components";
 import * as s from "./App.styles";
 import Device from "./components/Device";
 

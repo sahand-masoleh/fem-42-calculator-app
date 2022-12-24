@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const Selector = styled.div`
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	gap: 1rem;
 	max-width: 11rem;
 	flex-grow: 1;
 
 	// label (THEME)
 	& > .label {
-		color: var(--c-text-prm);
+		color: var(--c-text-disp);
 		text-transform: uppercase;
 	}
 
@@ -41,7 +42,7 @@ export const Selector = styled.div`
 				height: 1rem;
 				display: grid;
 				place-items: center;
-				color: var(--c-text-prm);
+				color: var(--c-text-disp);
 			}
 		}
 

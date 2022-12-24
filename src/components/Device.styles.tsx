@@ -10,6 +10,11 @@ export const Device = styled.div`
 export const TopBar = styled.div`
 	display: flex;
 	justify-content: space-between;
+
+	& > .brand {
+		font-size: 2rem;
+		color: var(--c-text-disp);
+	}
 `;
 
 export const Display = styled.div``;

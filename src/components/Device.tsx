@@ -1,5 +1,7 @@
 import * as s from "./Device.styles";
 import Selector, { Selectorable } from "./Selector";
+import Display from "./Display";
+import Keypad from "./Keypad";
 
 interface Deviceable extends Selectorable {}
 
@@ -10,8 +12,8 @@ function Device({ handleTheme }: Deviceable) {
 				<span className="brand">calc</span>
 				<Selector handleTheme={handleTheme} />
 			</s.TopBar>
-			<s.Display></s.Display>
-			<s.Keypad></s.Keypad>
+			<Display />
+			<Keypad />
 		</s.Device>
 	);
 }

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Device = styled.div`
-	max-width: 30rem;
-	max-height: 40rem;
+	max-width: 40rem;
 	width: 100%;
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 `;
 
 export const TopBar = styled.div`
@@ -16,7 +17,5 @@ export const TopBar = styled.div`
 		color: var(--c-text-disp);
 	}
 `;
-
-export const Display = styled.div``;
 
 export const Keypad = styled.div``;

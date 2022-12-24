@@ -19,7 +19,7 @@ export const Selector = styled.div`
 		border: none;
 		color: var(--c-device-bg);
 		background-color: currentColor;
-		outline: 0.5rem solid currentColor;
+		border: 0.5rem solid currentColor;
 		height: min-content;
 		display: flex;
 		align-items: center;
@@ -63,7 +63,7 @@ export const Selector = styled.div`
 			position: absolute;
 			height: var(--knob-size);
 			width: var(--knob-size);
-			background-color: var(--c-key-2-bg);
+			background-color: var(--c-key-tri-bg);
 			border-radius: 50%;
 			left: var(--left);
 			transition: left 0.2s linear;

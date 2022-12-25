@@ -6,9 +6,9 @@
 	"author": "Sahand Masoleh",
 	"license": "MIT",
 	"scripts": {
-		"vite-dev": "vite",
-		"vite-build": "tsc && vite build",
-		"electron-start": "electron ."
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"electron": "electron ."
 	},
 	"dependencies": {
 		"react": "^18.2.0",

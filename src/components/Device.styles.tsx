@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Device = styled.div`
-	max-width: 40rem;
+	max-width: 35rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.5rem;
 `;
 
 export const TopBar = styled.div`

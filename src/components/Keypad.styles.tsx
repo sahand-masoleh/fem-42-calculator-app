@@ -12,34 +12,66 @@ export const Keypad = styled.div`
 		"point zero divide multiply"
 		"reset reset equals equals";
 	grid-template-columns: repeat(4, 1fr);
-	gap: 1rem;
+	gap: 1.5rem;
 `;
 
 export const Button = styled.button`
 	border: none;
 	display: grid;
 	place-items: center;
-	padding: 0.5rem;
+	height: 4rem;
 	border-radius: 0.5rem;
 	text-transform: uppercase;
+	position: relative;
+	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
+	background-color: transparent;
+	border-bottom: 0.25rem solid;
+	box-sizing: content-box;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		filter: brightness(1.5);
+	}
+
+	&:active {
+		border-width: 0.15rem;
+		translate: 0 0.1rem;
+	}
 
 	&.prm {
 		font-size: 3rem;
 		color: var(--c-text-btn-prm);
-		background-color: var(--c-key-prm-bg);
-		box-shadow: inset 0 -0.33rem var(--c-key-prm-shdw);
+		border-color: var(--c-key-prm-shdw);
+
+		&::before {
+			background-color: var(--c-key-prm-bg);
+		}
 	}
 	&.sec {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		color: var(--c-text-btn-sec);
-		background-color: var(--c-key-sec-bg);
-		box-shadow: inset 0 -0.33rem var(--c-key-sec-shdw);
+		border-color: var(--c-key-sec-shdw);
+
+		&::before {
+			background-color: var(--c-key-sec-bg);
+		}
 	}
 	&.tri {
 		font-size: 2rem;
 		color: var(--c-text-btn-tri);
-		background-color: var(--c-key-tri-bg);
-		box-shadow: inset 0 -0.33rem var(--c-key-tri-shdw);
+		border-color: var(--c-key-tri-shdw);
+
+		&::before {
+			background-color: var(--c-key-tri-bg);
+		}
 	}
 
 	&#delete {

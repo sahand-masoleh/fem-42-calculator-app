@@ -1,9 +1,13 @@
 import * as s from "./Display.styles";
 
-function Display() {
+interface Displayable {
+	text: string;
+}
+
+function Display({ text }: Displayable) {
 	return (
 		<s.Display>
-			<span>123,456</span>
+			<span>{text}</span>
 		</s.Display>
 	);
 }

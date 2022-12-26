@@ -38,8 +38,10 @@ function newCalculator() {
 		// after operator and equals
 		check();
 		// after number
-		if (current !== "0") {
+		if (current.length > 1) {
 			current = current.slice(0, -1);
+		} else {
+			current = "0";
 		}
 		return current;
 	}
@@ -88,14 +90,18 @@ function newCalculator() {
 		if (memory && operator) {
 			const numMemory = memory ? parseFloat(memory) : undefined;
 			const numCurrent = parseFloat(current);
-			if (operator === "+") {
-				current = ((numMemory ?? 0) + numCurrent).toString();
-			} else if (operator === "-") {
-				current = ((numMemory ?? 0) - numCurrent).toString();
-			} else if (operator === "×") {
-				current = ((numMemory ?? 1) * numCurrent).toString();
-			} else if (operator === "÷") {
-				current = ((numMemory ?? 1) / numCurrent).toString();
+			if (operator) {
+				let result = 0;
+				if (operator === "+") {
+					result = (numMemory ?? 0) + numCurrent;
+				} else if (operator === "-") {
+					result = (numMemory ?? 0) - numCurrent;
+				} else if (operator === "×") {
+					result = (numMemory ?? 1) * numCurrent;
+				} else if (operator === "÷") {
+					result = (numMemory ?? 1) / numCurrent;
+				}
+				current = result.toString();
 			}
 			memory = null;
 			operator = null;

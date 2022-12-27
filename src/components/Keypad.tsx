@@ -1,12 +1,10 @@
-import { Calculator } from "../utils/calculator";
 import * as s from "./Keypad.styles";
 
 interface Keypadable {
-	calculator: Calculator;
-	setText: (text: string) => void;
+	handleInput: (text: string) => void;
 }
 
-function Keypad({ calculator, setText }: Keypadable) {
+function Keypad({ handleInput }: Keypadable) {
 	const nums = [];
 	for (let i = 1; i <= 9; i++) {
 		nums.push(
@@ -15,7 +13,7 @@ function Keypad({ calculator, setText }: Keypadable) {
 				label={i.toString()}
 				className="prm"
 				id={i.toString()}
-				onClick={() => setText(calculator.concat(i.toString()))}
+				onClick={() => handleInput(i.toString())}
 			/>
 		);
 	}
@@ -27,55 +25,55 @@ function Keypad({ calculator, setText }: Keypadable) {
 				label="0"
 				className="prm"
 				id="zero"
-				onClick={() => setText(calculator.concat("0"))}
+				onClick={() => handleInput("0")}
 			/>
 			<Button
 				label="."
 				className="prm"
 				id="point"
-				onClick={() => setText(calculator.point())}
+				onClick={() => handleInput(".")}
 			/>
 			<Button
 				label="del"
 				className="sec"
 				id="delete"
-				onClick={() => setText(calculator.backspace())}
+				onClick={() => handleInput("Backspace")}
 			/>
 			<Button
 				label="+"
 				className="prm"
 				id="plus"
-				onClick={() => setText(calculator.operate("+"))}
+				onClick={() => handleInput("+")}
 			/>
 			<Button
 				label="-"
 				className="prm"
 				id="minus"
-				onClick={() => setText(calculator.operate("-"))}
+				onClick={() => handleInput("-")}
 			/>
 			<Button
 				label="×"
 				className="prm"
 				id="multiply"
-				onClick={() => setText(calculator.operate("×"))}
+				onClick={() => handleInput("*")}
 			/>
 			<Button
 				label="÷"
 				className="prm"
 				id="divide"
-				onClick={() => setText(calculator.operate("÷"))}
+				onClick={() => handleInput("/")}
 			/>
 			<Button
 				label="="
 				className="tri"
 				id="equals"
-				onClick={() => setText(calculator.equals())}
+				onClick={() => handleInput("=")}
 			/>
 			<Button
 				label="reset"
 				className="sec"
 				id="reset"
-				onClick={() => setText(calculator.reset())}
+				onClick={() => handleInput("r")}
 			/>
 		</s.Keypad>
 	);
@@ -91,8 +89,12 @@ interface Buttonable {
 }
 
 function Button({ label, className, id, onClick }: Buttonable) {
+	const handleClick: React.MouseEventHandler = function (e) {
+		e.stopPropagation();
+		onClick();
+	};
 	return (
-		<s.Button className={className} id={id} onClick={onClick}>
+		<s.Button className={className} id={id} onClick={handleClick}>
 			{label}
 		</s.Button>
 	);

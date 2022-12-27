@@ -6,6 +6,10 @@ export const Device = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+
+	&:focus-visible {
+		outline: none;
+	}
 `;
 
 export const TopBar = styled.div`

@@ -7,10 +7,11 @@ export interface Selectorable {
 
 function Selector({ handleTheme }: Selectorable) {
 	const [knobPos, setKnobPos] = useState(0);
+
 	const handleChange: React.FormEventHandler<HTMLFieldSetElement> = function (
-		e
+		event
 	) {
-		const { value, offsetLeft } = e.target as HTMLInputElement;
+		const { value, offsetLeft } = event.target as HTMLInputElement;
 		handleTheme(parseInt(value));
 		setKnobPos(offsetLeft);
 	};

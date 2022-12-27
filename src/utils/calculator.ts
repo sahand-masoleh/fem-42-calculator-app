@@ -1,7 +1,7 @@
 function newCalculator() {
 	let memory: string | null = null;
 	let current = "0";
-	let operator: "+" | "-" | "×" | "÷" | null = null;
+	let operator: "+" | "-" | "*" | "/" | null = null;
 	// flips to true after operator
 	// ready to start back from zero
 	let isWaiting = false;
@@ -96,9 +96,9 @@ function newCalculator() {
 					result = (numMemory ?? 0) + numCurrent;
 				} else if (operator === "-") {
 					result = (numMemory ?? 0) - numCurrent;
-				} else if (operator === "×") {
+				} else if (operator === "*") {
 					result = (numMemory ?? 1) * numCurrent;
-				} else if (operator === "÷") {
+				} else if (operator === "/") {
 					result = (numMemory ?? 1) / numCurrent;
 				}
 				current = result.toString();

@@ -19,7 +19,7 @@ const Device = forwardRef(function (
 			result = calculator.concat(input);
 		} else if (input === ".") {
 			result = calculator.point();
-		} else if (input === "Backspace") {
+		} else if (["Backspace", "Delete"].includes(input)) {
 			result = calculator.backspace();
 		} else if (input === "r") {
 			result = calculator.reset();

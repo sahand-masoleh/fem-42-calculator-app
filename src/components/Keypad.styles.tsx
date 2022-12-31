@@ -12,7 +12,7 @@ export const Keypad = styled.div`
 		"point zero divide multiply"
 		"reset reset equals equals";
 	grid-template-columns: repeat(4, 1fr);
-	gap: 1.5rem;
+	gap: min(1.5rem, 5vw);
 `;
 
 export const Button = styled.button`

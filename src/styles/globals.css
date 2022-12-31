@@ -3,3 +3,9 @@
 :root {
 	--transition-duration: 0.25s;
 }
+
+@media screen and (max-width: 480px) {
+	:root {
+		font-size: 12px;
+	}
+}

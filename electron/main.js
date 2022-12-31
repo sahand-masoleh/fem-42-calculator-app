@@ -41,5 +41,5 @@ app.whenReady().then(() => {
 /* Other Windows */
 
 app.on("window-all-closed", () => {
-	if (isMac) app.quit();
+	if (!isMac) app.quit();
 });

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-interface Aboutable {
-	isElectron: boolean;
-}
+const { IS_ELECTRON } = window.env || {};
 
 export const About = styled.div`
 	/* SHARED BETWEEN ELECTRON AND WEB */
@@ -63,9 +61,8 @@ export const About = styled.div`
 
 	/* FOR THE WEB */
 	// if environment is not Electron we need to style out own window
-	${(props: Aboutable) =>
-		!props.isElectron &&
-		`
+	${!IS_ELECTRON &&
+	`
 		padding: 1.5rem;
 		border-radius: 1rem;
 		outline: 0.25rem solid var(--c-key-tri-bg);

@@ -18,7 +18,7 @@ function createWindow() {
 	});
 	aboutWindow.setMenu(null);
 
-	// expose to rendered
+	// expose to renderer
 	aboutWindow.once("ready-to-show", () => {
 		ipcMain.handle("close-about", () => {
 			aboutWindow.close();

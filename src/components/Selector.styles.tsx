@@ -17,7 +17,7 @@ export const Selector = styled.div`
 	}
 
 	// the selector panel
-	& > fieldset {
+	& > form > fieldset {
 		border: none;
 		color: var(--c-device-bg);
 		background-color: currentColor;

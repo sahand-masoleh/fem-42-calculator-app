@@ -11,7 +11,7 @@ const { IS_ELECTRON } = window.env || {};
 interface Deviceable extends Selectorable {}
 
 const Device = forwardRef(function (
-	{ handleTheme }: Deviceable,
+	{ handleTheme, theme }: Deviceable,
 	ref: ForwardedRef<HTMLDivElement>
 ) {
 	const [text, setText] = useState("0");
@@ -45,11 +45,7 @@ const Device = forwardRef(function (
 		const body = document.querySelector("body");
 
 		setIsShowingModal((prev) => {
-			// if (!prev) {
-			// 	body?.style.overflow = "hidden";
-			// } else {
-			// 	body?.style.overflow = "unset";
-			// }
+			// TODO: prevent scrolling when modal is active
 			return !prev;
 		});
 	}
@@ -68,7 +64,7 @@ const Device = forwardRef(function (
 							i
 						</button>
 					)}
-					<Selector handleTheme={handleTheme} />
+					<Selector handleTheme={handleTheme} theme={theme} />
 				</s.TopBar>
 				<Display text={text} />
 				<Keypad handleInput={handleInput} />

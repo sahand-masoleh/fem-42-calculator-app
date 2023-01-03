@@ -16,7 +16,7 @@ function About({ handleShowingModal }: Aboutable) {
 	}
 
 	return (
-		<s.About isElectron={IS_ELECTRON}>
+		<s.About>
 			<h1>Cross-platform Calculator</h1>
 			<p>Hi!</p>
 			<p>

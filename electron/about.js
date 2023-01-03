@@ -1,4 +1,4 @@
-const { BrowserWindow, ipcMain, autoUpdater } = require("electron");
+const { BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
 const IS_DEV = process.env.DEVELOPMENT;
@@ -9,10 +9,9 @@ function createWindow() {
 
 	// config
 	let aboutWindow = new BrowserWindow({
-		width: 480,
-		height: 480,
+		width: 640,
+		height: 640,
 		resizable: false,
-		frame: false,
 		parent: parentWindow,
 		modal: true,
 		webPreferences: { preload: path.join(__dirname, "preload.js") },

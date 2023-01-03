@@ -11,6 +11,7 @@ export const Selector = styled.div`
 	// label (THEME)
 	& > .label {
 		font-size: 0.8rem;
+		font-weight: 700;
 		color: var(--c-text-disp);
 		text-transform: uppercase;
 	}
@@ -40,6 +41,7 @@ export const Selector = styled.div`
 
 			& > span {
 				font-size: 0.85rem;
+				font-weight: 700;
 				width: 1rem;
 				height: 1rem;
 				display: grid;

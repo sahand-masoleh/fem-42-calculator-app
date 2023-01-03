@@ -13,6 +13,7 @@ export const Display = styled.div`
 		display: block;
 		color: var(--c-text-disp);
 		font-size: 3.5rem;
+		font-weight: 700;
 		line-height: 3.5rem;
 	}
 `;

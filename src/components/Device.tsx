@@ -1,9 +1,12 @@
-import { ForwardedRef, forwardRef, useEffect, useRef, useState } from "react";
+import { ForwardedRef, forwardRef, useState } from "react";
 import * as s from "./Device.styles";
 import Selector, { Selectorable } from "./Selector";
 import Display from "./Display";
 import Keypad from "./Keypad";
+import Modal from "./Modal";
 import calculator from "../utils/calculator";
+
+const { IS_ELECTRON } = window.env || {};
 
 interface Deviceable extends Selectorable {}
 
@@ -12,6 +15,7 @@ const Device = forwardRef(function (
 	ref: ForwardedRef<HTMLDivElement>
 ) {
 	const [text, setText] = useState("0");
+	const [isShowingModal, setIsShowingModal] = useState(false);
 
 	function handleInput(input: string) {
 		let result = "";
@@ -37,15 +41,42 @@ const Device = forwardRef(function (
 		handleInput(key);
 	};
 
+	function handleShowingModal() {
+		const body = document.querySelector("body");
+
+		setIsShowingModal((prev) => {
+			// if (!prev) {
+			// 	body?.style.overflow = "hidden";
+			// } else {
+			// 	body?.style.overflow = "unset";
+			// }
+			return !prev;
+		});
+	}
+
 	return (
-		<s.Device onKeyDown={handleKeyDown} tabIndex={-1} ref={ref}>
-			<s.TopBar>
-				<span className="brand">calc</span>
-				<Selector handleTheme={handleTheme} />
-			</s.TopBar>
-			<Display text={text} />
-			<Keypad handleInput={handleInput} />
-		</s.Device>
+		<>
+			<s.Device onKeyDown={handleKeyDown} tabIndex={-1} ref={ref}>
+				<s.TopBar>
+					<span className="brand">calc</span>
+					{!IS_ELECTRON && (
+						<button
+							className="info"
+							onClick={handleShowingModal}
+							aria-label="info"
+						>
+							i
+						</button>
+					)}
+					<Selector handleTheme={handleTheme} />
+				</s.TopBar>
+				<Display text={text} />
+				<Keypad handleInput={handleInput} />
+			</s.Device>
+			{!IS_ELECTRON && isShowingModal && (
+				<Modal handleShowingModal={handleShowingModal} />
+			)}
+		</>
 	);
 });
 

@@ -7,18 +7,18 @@
 	/* Keys*/
 	--c-key-prm-bg: hsl(30, 25%, 89%);
 	--c-key-prm-shdw: hsl(28, 16%, 65%);
-	--c-text-btn-prm: hsl(221, 14%, 31%);
+	--c-key-prm-txt: hsl(221, 14%, 31%);
 
 	--c-key-sec-bg: hsl(225, 21%, 49%);
 	--c-key-sec-shdw: hsl(224, 28%, 35%);
-	--c-text-btn-sec: hsl(0, 0%, 100%);
+	--c-key-sec-txt: hsl(0, 0%, 100%);
 
 	--c-key-tri-shdw: hsl(6, 70%, 34%);
 	--c-key-tri-bg: hsl(6, 63%, 50%);
-	--c-text-btn-tri: var(--c-text-btn-sec);
+	--c-key-tri-txt: var(--c-key-sec-txt);
 
 	/* Display */
-	--c-text-disp: var(--c-text-btn-sec);
+	--c-text-disp: var(--c-key-sec-txt);
 }
 
 .theme-2 {
@@ -30,18 +30,18 @@
 	/* Keys*/
 	--c-key-prm-bg: hsl(45, 7%, 89%);
 	--c-key-prm-shdw: hsl(35, 11%, 61%);
-	--c-text-btn-prm: hsl(60, 10%, 19%);
+	--c-key-prm-txt: hsl(60, 10%, 19%);
 
 	--c-key-sec-bg: hsl(185, 42%, 37%);
 	--c-key-sec-shdw: hsl(185, 58%, 25%);
-	--c-text-btn-sec: hsl(0, 0%, 100%);
+	--c-key-sec-txt: hsl(0, 0%, 100%);
 
 	--c-key-tri-shdw: hsl(25, 99%, 27%);
 	--c-key-tri-bg: hsl(25, 98%, 40%);
-	--c-text-btn-tri: var(--c-text-btn-sec);
+	--c-key-tri-txt: var(--c-key-sec-txt);
 
 	/* Display */
-	--c-text-disp: var(--c-text-btn-prm);
+	--c-text-disp: var(--c-key-prm-txt);
 }
 
 .theme-3 {
@@ -53,16 +53,16 @@
 	/* Keys*/
 	--c-key-prm-bg: hsl(268, 47%, 21%);
 	--c-key-prm-shdw: hsl(290, 70%, 36%);
-	--c-text-btn-prm: hsl(52, 100%, 62%);
+	--c-key-prm-txt: hsl(52, 100%, 62%);
 
 	--c-key-sec-bg: hsl(281, 89%, 26%);
 	--c-key-sec-shdw: hsl(285, 91%, 52%);
-	--c-text-btn-sec: hsl(0, 0%, 100%);
+	--c-key-sec-txt: hsl(0, 0%, 100%);
 
 	--c-key-tri-shdw: hsl(177, 92%, 70%);
 	--c-key-tri-bg: hsl(176, 100%, 44%);
-	--c-text-btn-tri: hsl(198, 20%, 13%);
+	--c-key-tri-txt: hsl(198, 20%, 13%);
 
 	/* Display */
-	--c-text-disp: var(--c-text-btn-prm);
+	--c-text-disp: var(--c-key-prm-txt);
 }

@@ -29,6 +29,7 @@ export const Button = styled.button`
 	background-color: transparent;
 	border-bottom: 0.25rem solid;
 	box-sizing: content-box;
+	font-weight: 700;
 
 	&::before {
 		content: "";
@@ -48,7 +49,7 @@ export const Button = styled.button`
 
 	&.prm {
 		font-size: 3rem;
-		color: var(--c-text-btn-prm);
+		color: var(--c-key-prm-txt);
 		border-color: var(--c-key-prm-shdw);
 
 		&::before {
@@ -57,7 +58,7 @@ export const Button = styled.button`
 	}
 	&.sec {
 		font-size: 1.5rem;
-		color: var(--c-text-btn-sec);
+		color: var(--c-key-sec-txt);
 		border-color: var(--c-key-sec-shdw);
 
 		&::before {
@@ -66,7 +67,7 @@ export const Button = styled.button`
 	}
 	&.tri {
 		font-size: 2rem;
-		color: var(--c-text-btn-tri);
+		color: var(--c-key-tri-txt);
 		border-color: var(--c-key-tri-shdw);
 
 		&::before {

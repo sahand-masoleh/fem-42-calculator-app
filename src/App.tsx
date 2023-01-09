@@ -4,9 +4,10 @@ import "./styles/themes.css";
 
 import { useEffect, useRef, useState } from "react";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import * as s from "./App.styles";
 import Device from "./components/Device";
+import Download from "./components/Download";
 import About from "./components/About";
+import * as s from "./App.styles";
 
 /* PREP */
 
@@ -59,7 +60,10 @@ function App() {
 				/>
 			) : (
 				// for the web
-				<Device handleTheme={handleTheme} theme={theme} ref={ref} />
+				<>
+					<Device handleTheme={handleTheme} theme={theme} ref={ref} />
+					<Download />
+				</>
 			)}
 		</s.Div_App>
 	);

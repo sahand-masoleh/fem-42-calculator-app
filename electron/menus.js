@@ -1,6 +1,7 @@
 const { Menu } = require("electron");
 const openAbout = require("./about");
 
+const IS_DEV = process.env.DEVELOPMENT;
 const isMac = process.platform === "darwin";
 
 const template = [
@@ -31,12 +32,8 @@ const template = [
 					);
 				},
 			},
-			{
-				label: "Author's Portfolio",
-				click: async () => {
-					const { shell } = require("electron");
-					await shell.openExternal("https://sahandmasoleh.com");
-				},
+			IS_DEV && {
+				role: "toggleDevTools",
 			},
 		],
 	},

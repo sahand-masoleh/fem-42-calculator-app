@@ -22,7 +22,6 @@ function createWindow() {
 
 	if (IS_DEV) {
 		mainWindow.loadURL("http://localhost:5173");
-		mainWindow.webContents.openDevTools();
 	} else {
 		mainWindow.loadFile(
 			`file://${path.join(__dirname, ".." / "dist", "index.html")}`

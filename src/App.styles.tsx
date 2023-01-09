@@ -5,6 +5,7 @@ export const Div_App = styled.div`
 	padding: 1rem;
 	background-color: var(--c-main-bg);
 	display: grid;
+	grid-template-rows: 1fr auto;
 	place-items: center;
 	transition: background-color var(--transition-duration) linear;
 `;

@@ -27,8 +27,8 @@ function About({ handleShowingModal }: Aboutable) {
 				, available as a web app and a desktop app.
 			</p>
 			<p>
-				Since the codebase is relatively small, it is shared between all
-				versions. You can check out the code on my github repository.
+				Since the app is relatively small, all the versions share the same code
+				base. You can check out the code on my github repository.
 			</p>
 			<h2>Tech Stack</h2>
 			<ul>

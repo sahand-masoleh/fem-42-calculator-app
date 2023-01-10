@@ -13,8 +13,11 @@ function createWindow() {
 	mainWindow = new BrowserWindow({
 		width: 640,
 		height: 960,
-		webPreferences: { preload: path.join(__dirname, "preload.js") },
+		webPreferences: {
+			preload: path.join(__dirname, "preload.js"),
+		},
 	});
+	mainWindow.setTitle("Calculator App");
 
 	mainWindow.once("ready-to-show", () => {
 		mainWindow.show();
@@ -23,9 +26,8 @@ function createWindow() {
 	if (IS_DEV) {
 		mainWindow.loadURL("http://localhost:5173");
 	} else {
-		mainWindow.loadFile(
-			`file://${path.join(__dirname, ".." / "dist", "index.html")}`
-		);
+		const file = "file://" + path.join(__dirname, "..", "dist", "index.html");
+		mainWindow.loadURL(file);
 	}
 }
 

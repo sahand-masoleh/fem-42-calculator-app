@@ -35,10 +35,9 @@ function createWindow() {
 	if (IS_DEV) {
 		aboutWindow.loadURL("http://localhost:5173/#/about");
 	} else {
-		aboutWindow.loadFile(
-			// prettier-ignore
-			`file://${path.join(__dirname, ".." / "dist", "index.html\/#\/about")}`
-		);
+		const file =
+			"file://" + path.join(__dirname, "..", "dist", "index.html#", "about");
+		aboutWindow.loadURL(file);
 	}
 }
 

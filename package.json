@@ -8,12 +8,12 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "rm -r dist && tsc && vite build",
 		"test": "jest",
 		"electron": "DEVELOPMENT=true electron .",
 		"start": "electron-forge start",
 		"package": "electron-forge package",
-		"make": "electron-forge make"
+		"make": "rm -r out && electron-forge make"
 	},
 	"dependencies": {
 		"react": "^18.2.0",

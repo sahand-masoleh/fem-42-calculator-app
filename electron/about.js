@@ -17,6 +17,7 @@ function createWindow() {
 		webPreferences: { preload: path.join(__dirname, "preload.js") },
 	});
 	aboutWindow.setMenu(null);
+	aboutWindow.setTitle("About");
 
 	// expose to renderer
 	aboutWindow.once("ready-to-show", () => {

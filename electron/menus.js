@@ -5,7 +5,6 @@ const IS_DEV = process.env.DEVELOPMENT;
 const isMac = process.platform === "darwin";
 
 const template = [
-	// { role: 'fileMenu' }
 	{
 		label: "File",
 		submenu: [isMac ? { role: "close" } : { role: "quit" }],
@@ -32,12 +31,22 @@ const template = [
 					);
 				},
 			},
-			IS_DEV && {
-				role: "toggleDevTools",
-			},
 		],
 	},
 ];
 
-const menu = Menu.buildFromTemplate(template);
+const devMenu = IS_DEV
+	? [
+			{
+				label: "Development",
+				submenu: [
+					{
+						role: "toggleDevTools",
+					},
+				],
+			},
+	  ]
+	: [];
+
+const menu = Menu.buildFromTemplate([...template, ...devMenu]);
 Menu.setApplicationMenu(menu);

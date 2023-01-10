@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 
 const IS_DEV = process.env.DEVELOPMENT;
-const isMac = process.platform === "darwin";
+const IS_MAC = process.platform === "darwin";
 
 /* Menus */
 require("./menus");
@@ -29,16 +29,19 @@ function createWindow() {
 	}
 }
 
-app.whenReady().then(() => {
-	createWindow();
+app
+	.whenReady()
+	.then(() => {
+		createWindow();
 
-	app.on("activate", () => {
-		if (BrowserWindow.getAllWindows().length === 0) createWindow();
-	});
-});
+		app.on("activate", () => {
+			if (BrowserWindow.getAllWindows().length === 0) createWindow();
+		});
+	})
+	.catch((e) => console.log(e));
 
 /* Other Windows */
 
 app.on("window-all-closed", () => {
-	if (!isMac) app.quit();
+	if (!IS_MAC) app.quit();
 });

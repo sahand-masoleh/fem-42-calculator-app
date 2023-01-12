@@ -18,6 +18,9 @@ module.exports = {
 			config: {
 				options: {
 					icon: "./electron/icon.png",
+					productName: "CP Calculator",
+					genenicName: "CPCalculator",
+					name: "cp-calculator",
 				},
 			},
 		},

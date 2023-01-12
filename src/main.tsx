@@ -5,7 +5,7 @@ import App from "./App";
 declare global {
 	export interface Window {
 		env: { IS_ELECTRON: boolean };
-		windows: { closeAbout: () => void };
+		main: { closeAbout: () => void; openLink: (url: string) => void };
 	}
 }
 

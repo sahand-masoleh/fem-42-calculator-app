@@ -4,6 +4,7 @@ contextBridge.exposeInMainWorld("env", {
 	IS_ELECTRON: true,
 });
 
-contextBridge.exposeInMainWorld("windows", {
+contextBridge.exposeInMainWorld("main", {
 	closeAbout: () => ipcRenderer.invoke("close-about"),
+	openLink: (url) => ipcRenderer.invoke("open-link", url),
 });

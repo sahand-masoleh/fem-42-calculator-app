@@ -1,6 +1,6 @@
 {
 	"name": "42-calculator-app",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "A simple calculator app, made for learning purposes",
 	"main": "electron/main.js",
 	"homepage": ".",
@@ -8,12 +8,12 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite",
-		"build": "rm -r dist && tsc && vite build",
+		"build": "vite build",
 		"test": "jest",
 		"electron": "DEVELOPMENT=true electron .",
 		"start": "electron-forge start",
 		"package": "electron-forge package",
-		"make": "rm -r out && electron-forge make"
+		"make": "electron-forge make"
 	},
 	"dependencies": {
 		"react": "^18.2.0",

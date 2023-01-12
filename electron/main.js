@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const path = require("path");
 
 const IS_DEV = process.env.DEVELOPMENT;
@@ -18,10 +18,6 @@ function createWindow() {
 		},
 	});
 	mainWindow.setTitle("Calculator App");
-
-	mainWindow.once("ready-to-show", () => {
-		mainWindow.show();
-	});
 
 	if (IS_DEV) {
 		mainWindow.loadURL("http://localhost:5173");

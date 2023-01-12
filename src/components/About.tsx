@@ -1,3 +1,4 @@
+import React from "react";
 import * as s from "./About.styles";
 
 const { IS_ELECTRON } = window.env || {};
@@ -9,11 +10,18 @@ export interface Aboutable {
 function About({ handleShowingModal }: Aboutable) {
 	function handleClose() {
 		if (IS_ELECTRON) {
-			window.windows.closeAbout();
+			window.main.closeAbout();
 		} else {
 			handleShowingModal && handleShowingModal();
 		}
 	}
+
+	const handleClickLink: React.MouseEventHandler = function (event) {
+		event.preventDefault();
+		const target = event.target as HTMLLinkElement;
+		const url = target.getAttribute("href");
+		window.main.openLink(url || "");
+	};
 
 	return (
 		<s.About>
@@ -21,7 +29,10 @@ function About({ handleShowingModal }: Aboutable) {
 			<p>Hi!</p>
 			<p>
 				This is a solution to the{" "}
-				<a href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29">
+				<a
+					href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29"
+					onClick={handleClickLink}
+				>
 					Calculator App challenge from frontendmontor.io
 				</a>
 				, available as a web app and a desktop app.
@@ -37,10 +48,15 @@ function About({ handleShowingModal }: Aboutable) {
 				<li>Electron.js</li>
 				<li>Styled Components</li>
 			</ul>
-			<a href="https://github.com/sahand-masoleh/fem-42-calculator-app">
+			<a
+				href="https://github.com/sahand-masoleh/fem-42-calculator-app"
+				onClick={handleClickLink}
+			>
 				Github repository
 			</a>
-			<a href="https://sahandmasoleh.com/">My portfolio</a>
+			<a href="https://sahandmasoleh.com/" onClick={handleClickLink}>
+				My portfolio
+			</a>
 			<button onClick={handleClose}>Ok</button>
 		</s.About>
 	);

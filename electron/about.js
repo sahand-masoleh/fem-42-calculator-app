@@ -1,4 +1,4 @@
-const { BrowserWindow, ipcMain } = require("electron");
+const { BrowserWindow, ipcMain, shell } = require("electron");
 const path = require("path");
 
 const IS_DEV = process.env.DEVELOPMENT;
@@ -24,16 +24,20 @@ function createWindow() {
 		ipcMain.handle("close-about", () => {
 			aboutWindow.close();
 		});
+		ipcMain.handle("open-link", (_, url) => {
+			url && shell.openExternal(url);
+		});
 	});
 	// cleanup after close
 	aboutWindow.once("closed", () => {
 		aboutWindow = null;
-		ipcMain.removeHandler("close-about");
+		ipcMain.removeAllListeners();
 	});
 
 	// choose source based on environment
 	if (IS_DEV) {
 		aboutWindow.loadURL("http://localhost:5173/#/about");
+		aboutWindow.webContents.openDevTools();
 	} else {
 		const file =
 			"file://" + path.join(__dirname, "..", "dist", "index.html#", "about");
